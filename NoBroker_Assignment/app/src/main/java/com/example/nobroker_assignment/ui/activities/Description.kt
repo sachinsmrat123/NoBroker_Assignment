@@ -21,5 +21,12 @@ class Description : AppCompatActivity() {
             ivImageDesc.setImageBitmap(bitMap)
         }
 
+
+    }
+
+
+    override fun onBackPressed() {
+
+        super.onBackPressed()
     }
 }

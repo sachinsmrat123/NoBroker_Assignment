@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NoBroker_Assignment">
-        <activity android:name=".ui.activities.Description"></activity>
+        <activity android:name=".ui.activities.SplashScreen"></activity>
+        <activity
+            android:name=".ui.activities.Description"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
