@@ -9,6 +9,10 @@ import com.example.nobroker_assignment.data.remote.ApiServices
 import kotlinx.coroutines.flow.Flow
 import java.net.URL
 
+/**
+ * this is repository class we are following MVVM model this is
+ * it is helpFull in communication between data class pass the response to viewModel
+ */
 class MyRepository(private val myDao: MyDao) {
     val api= ApiServices.instance
     suspend fun insertPosts(){
@@ -23,6 +27,9 @@ class MyRepository(private val myDao: MyDao) {
         return myDao.getPosts()
     }
 
+    /**
+     * here  we are converting string url to bit for string in database
+     */
     private fun urlToBitmap(url:String):Bitmap{
         val uri=URL(url)
         val imageBitMap=BitmapFactory.decodeStream(uri.openConnection().getInputStream())

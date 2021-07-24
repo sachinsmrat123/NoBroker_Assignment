@@ -9,14 +9,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00ff22"
+        android:background="@color/light_pink"
         android:layout_gravity="center_horizontal"
         >
         <TextView
+            android:layout_marginStart="20sp"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
             android:text="Description"
             android:textSize="30sp"
@@ -25,25 +26,40 @@
             />
     </LinearLayout>
 
-    <ImageView
+    <LinearLayout
+
+        android:background="@color/light_pink"
+        android:layout_marginTop="20sp"
         android:layout_gravity="center_horizontal"
         android:layout_width="300dp"
-        android:scaleType="fitXY"
         android:layout_height="300dp"
-        android:id="@+id/ivImageDesc"/>
+        >
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="50dp"
+            android:layout_width="200dp"
+            android:scaleType="fitXY"
+            android:layout_height="200dp"
+            android:id="@+id/ivImageDesc"/>
+
+    </LinearLayout>
     <TextView
+        android:textColor="#000000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
         android:id="@+id/tvTitleDesc"
-        android:textSize="22sp"
+        android:textSize="23sp"
         />
     <TextView
+        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/tvSubTitleDesc"
-        android:textSize="16sp"
+        android:textSize="19sp"
         />
 
 </LinearLayout>

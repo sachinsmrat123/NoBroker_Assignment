@@ -7,6 +7,9 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * this is dao class in this class we write queries as per our need
+ */
 @Dao
 interface MyDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)

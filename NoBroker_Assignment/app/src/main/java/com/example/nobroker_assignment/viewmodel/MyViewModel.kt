@@ -9,6 +9,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * this is our viewModel responsible for taking the response from repository and passing it to owner
+ */
 class MyViewModel(
     private val repository: MyRepository
 ) : ViewModel() {

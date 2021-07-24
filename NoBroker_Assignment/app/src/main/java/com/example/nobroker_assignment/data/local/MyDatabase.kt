@@ -6,6 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
+/**
+ * this is database class responsible for creating RoomDataBase Instance
+ */
 @Database(entities = [MyEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class MyDatabase : RoomDatabase() {

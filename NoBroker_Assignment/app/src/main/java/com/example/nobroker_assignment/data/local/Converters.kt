@@ -5,6 +5,9 @@ import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
 import java.io.ByteArrayOutputStream
 
+/**
+ * this class is useFull for converting bitMap to bitMapArray
+ */
 class Converters {
 
     @TypeConverter

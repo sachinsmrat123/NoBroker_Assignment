@@ -10,6 +10,9 @@ import com.example.nobroker_assignment.data.local.MyEntity
 import com.example.nobroker_assignment.ui.listeners.ItemClickListener
 import kotlinx.android.synthetic.main.item_layout.view.*
 
+/**
+ * this is main responsible class setting up the data in recyclerView
+ */
 class PostAdapter( var postList:List<MyEntity>, val listner: ItemClickListener):RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
      //lateinit var postList: List<MyEntity>
     inner class PostViewHolder(itemView:View):RecyclerView.ViewHolder(itemView)

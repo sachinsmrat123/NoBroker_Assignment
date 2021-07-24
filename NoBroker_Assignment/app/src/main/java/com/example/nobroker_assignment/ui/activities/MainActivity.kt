@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+        /**
+         * here we initializing our shimmerEffect UI
+         */
         shimmerEffect=findViewById(R.id.shimmer_view_container)
         adapter2= PostAdapter(entity,this)
         recyclerView.layoutManager= LinearLayoutManager(this)
@@ -44,6 +47,9 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
         val viewModelFactory= MyViewModelFactory(app.repository)
         viewModel= ViewModelProviders.of(this,viewModelFactory).get(MyViewModel::class.java)
         viewModel.getPosts().observe(this, Observer {
+            /**
+             * for some delay we are setting our adapter with help of handler
+             */
         Handler(Looper.getMainLooper()).postDelayed({
 
                 entity.clear()
@@ -73,6 +79,9 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
         })
     }
 
+    /**
+     *passing the data to description activity
+     */
     override fun onItemClicked(myEntity: MyEntity) {
         val stream = ByteArrayOutputStream()
         myEntity.image.compress(Bitmap.CompressFormat.PNG, 100, stream)
@@ -85,6 +94,10 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
 
 
     }
+
+    /**
+     * this method is responsible for searchView implementation
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.item_menu, menu)
 

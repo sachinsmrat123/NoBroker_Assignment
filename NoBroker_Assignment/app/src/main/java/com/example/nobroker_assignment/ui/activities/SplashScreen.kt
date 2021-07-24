@@ -18,6 +18,9 @@ class SplashScreen : AppCompatActivity() {
     lateinit var frombottom: Animation
     lateinit var froTop: Animation
 
+    /**
+     * with help of animation class i implemented splash screen
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

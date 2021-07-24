@@ -6,7 +6,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-
+/**
+ * this is apiService interface here we pass pass our url
+ * calling api with help of retrofit class
+ */
 const val BASE_URL="https://api.jsonbin.io/"
 
 interface ApiInterface{
