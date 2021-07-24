@@ -1,8 +1,8 @@
 package com.example.nobroker_assignment.ui.activities
 
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.ByteArrayOutputStream
 
 
 class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTextListener {
@@ -46,26 +47,7 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
                 viewModel.insertPosts()
             }
         }
-        CoroutineScope(Dispatchers.IO).launch {
-            etSearch.addTextChangedListener(object : TextWatcher {
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                  tvT1.setText(etSearch.toString())
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence, start: Int, count: Int,
-                    after: Int
-                ) {
-
-                }
-
-                override fun afterTextChanged(s: Editable) {
-
-                }
-            })
-
-        }
     }
 
     private fun searchDatabase(query: String) {
@@ -79,6 +61,15 @@ class MainActivity : AppCompatActivity(),ItemClickListener,SearchView.OnQueryTex
     }
 
     override fun onItemClicked(myEntity: MyEntity) {
+        val stream = ByteArrayOutputStream()
+        myEntity.image.compress(Bitmap.CompressFormat.PNG, 100, stream)
+        val image = stream.toByteArray()
+            val intent=Intent(this,Description::class.java)
+        intent.putExtra("title",myEntity.title)
+        intent.putExtra("subTitle",myEntity.subTitle)
+        intent.putExtra("image",image)
+        startActivity(intent)
+
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
