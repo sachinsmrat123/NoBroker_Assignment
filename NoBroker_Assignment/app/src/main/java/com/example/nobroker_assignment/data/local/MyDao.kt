@@ -13,4 +13,7 @@ interface MyDao {
 
     @Query("select * from my_nobroker_table")
     fun getPosts(): LiveData<List<MyEntity>>
+
+    @Query("select count(*) from my_nobroker_table")
+    fun countCol():Int
 }

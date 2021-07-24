@@ -1,4 +1,4 @@
-package com.example.nobroker_assignment.ui
+package com.example.nobroker_assignment.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

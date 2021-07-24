@@ -18,4 +18,8 @@ class MyRepository(val myDao: MyDao) {
     fun getPosts(): LiveData<List<MyEntity>> {
         return myDao.getPosts()
     }
+
+    fun getCount():Int{
+        return myDao.countCol()
+    }
 }
