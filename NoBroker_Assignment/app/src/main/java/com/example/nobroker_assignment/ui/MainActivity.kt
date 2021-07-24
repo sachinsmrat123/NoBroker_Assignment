@@ -1,7 +1,8 @@
-package com.example.nobroker_assignment
+package com.example.nobroker_assignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.nobroker_assignment.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
