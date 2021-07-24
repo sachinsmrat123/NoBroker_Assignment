@@ -10,8 +10,8 @@ import com.example.nobroker_assignment.data.local.MyEntity
 import com.example.nobroker_assignment.ui.listeners.ItemClickListener
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class PostAdapter( val postList:List<MyEntity>, val listner: ItemClickListener):RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
-
+class PostAdapter( var postList:List<MyEntity>, val listner: ItemClickListener):RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+     //lateinit var postList: List<MyEntity>
     inner class PostViewHolder(itemView:View):RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -32,5 +32,9 @@ class PostAdapter( val postList:List<MyEntity>, val listner: ItemClickListener):
 
     override fun getItemCount(): Int {
         return postList.size
+    }
+    fun setData(newData: List<MyEntity>){
+        postList = newData
+        notifyDataSetChanged()
     }
 }

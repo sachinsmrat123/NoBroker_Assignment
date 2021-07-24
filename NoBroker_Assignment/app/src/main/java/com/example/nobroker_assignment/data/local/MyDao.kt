@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MyDao {
@@ -16,4 +17,7 @@ interface MyDao {
 
     @Query("select count(*) from my_nobroker_table")
     fun countCol():Int
+
+    @Query("SELECT * FROM my_nobroker_table WHERE title LIKE :searchQuery OR subTitle LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): Flow<List<MyEntity>>
 }

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NoBroker_Assignment</string>
+    <string name="app_name">NoBroker</string>
+    <string name="search">search</string>
 </resources>

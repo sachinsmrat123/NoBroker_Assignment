@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import com.example.nobroker_assignment.data.local.MyDao
 import com.example.nobroker_assignment.data.local.MyEntity
 import com.example.nobroker_assignment.data.remote.ApiServices
+import kotlinx.coroutines.flow.Flow
 import java.net.URL
 
 class MyRepository(private val myDao: MyDao) {
@@ -30,5 +31,9 @@ class MyRepository(private val myDao: MyDao) {
 
     fun getCount():Int{
         return myDao.countCol()
+    }
+
+    fun getSearchData(query:String): Flow<List<MyEntity>> {
+        return myDao.searchDatabase(query)
     }
 }
